@@ -1,0 +1,390 @@
+*{
+    margin: 5px;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+}
+#login-page{
+  margin-top: 10%;
+  margin-left: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px gray;
+  background-color: rgb(214, 204, 223);
+   
+}
+#login-page>h3{
+  text-decoration: underline;
+  font-style: italic;
+}
+#btn{
+  width: 70px;
+  height: 30px;
+  background-color: rgb(236, 227, 227);
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+#btn:hover{
+ background-color: aliceblue;
+}
+#user-name,#password{
+  width: 200px;
+
+}
+#ip{
+  margin-left: 50px;
+}
+#maindiv{
+  width: 100vw;
+  height: 100vh;
+  color: rgb(4, 0, 0);
+  background-color: rgb(255, 253, 253);
+  position: absolute;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+#logout{
+  
+  width: 100px;
+  height: 30px;
+  background-color: rgb(236, 227, 227);
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+#logout:hover{
+ background-color: aliceblue;
+
+}
+#maindiv1{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+
+}
+#logout{
+  position: absolute;
+  margin-left: 1400px;
+}
+
+#home-property{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  z-index:2;
+  
+}
+
+#home{
+  width: 25vw;
+  height: 100vw;
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  
+  
+  }
+#home1.house1{
+  rotate: 180deg;
+  margin-left: 280px;
+  transition: 1.5s;
+}
+#home1{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 20px;
+  z-index: 2;
+  transition: 1.5s;
+  border-radius: 60%;
+}
+#t-o-details{
+  width: 25vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+  left:-26vw;
+  top:0;
+  transition: 1.5s;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+} 
+#t-o-details>h1{
+  text-align: center;
+  margin-top: 60px;
+}
+#t-o-details.come-right{
+  top: 0;
+  left: 0vw;
+  transition: 1.5s;
+}
+
+ .turf{
+  width: 300px;
+  border-radius: 20px;
+  height: 200px;
+  background-color: white;
+  box-shadow: 3 px 3px 5px 10px gray;
+  
+ }
+#mainh2{
+    background-color: antiquewhite;
+    color: black;
+    text-align: center;
+    height: 35px;
+    margin-left: 445px;
+    margin-top: 10px;
+}
+#maininfo{
+    text-align: center;
+}
+#mainbtn{
+    width: 100px;
+    height: 40px;
+    background-color: aqua;
+    border-radius: 25px;
+    font-style: italic;
+    font-size: 15px;
+}
+.infoboxmain{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  
+}
+#color-grad{
+  width: 70vw;
+  height: 70vh;
+  background:conic-gradient(from var(--angle),transparent,rgb(38, 202, 224));
+  filter: blur(5px);
+  position: absolute;
+  animation: 1.5s spin linear infinite; 
+  opacity: 0;
+  z-index: -1;
+  margin-left: 9%;
+  margin-top: -9px;
+  border-radius: 20px;
+  padding: 20px;
+}
+@property --angle{
+  syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+}
+@keyframes spin {
+  from{
+      --angle:0deg
+  }
+  to{
+      --angle:360deg;
+  }
+  
+}
+#color-grad.adding{
+  opacity: 1;
+
+}
+#infobox{
+    width:70vw ;
+    height: 70vh;
+    background-color: gray;
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+    margin-left: 9%;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: auto;
+    scrollbar-width: none;
+    
+}
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#infobox.adding{
+    opacity: 1;
+    transition: .5s;
+    position: relative;
+}
+
+.boxinfo{
+    width: 450px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+}
+
+.boxinfo:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+    
+}
+.input-box{
+    margin-left: 230px;
+}
+.boxinfohead{
+    font-size: 18px;
+}
+#infoboxbtn1,#infoboxbtn{
+    text-align: center;
+    margin-right: 35px;
+    margin-left: 35px;
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(101, 246, 197);
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+#infoboxbtn1{
+    user-select: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#infoboxbtn:hover,#infoboxbtn1:hover{
+    box-shadow: 3px 3px 7px rgb(3, 73, 75);
+}
+#maininstruction{
+    margin-top: 50px;
+    margin-left: 10px;
+    font-style: italic;
+}
+#location-list {
+    display: none;
+    margin-left: 100px;
+    position: relative;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 400px;
+    border-radius: 15px;
+  }
+  
+  #location-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #location-list li:hover {
+    background-color: #f2f2f2;
+  }
+  #sizeturf{
+    height: 50px;
+    color: gray;
+    width: 470px;
+  }
+  .photoesdiv{
+    width: 125px;
+    height: 125px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 40px;
+    margin-left: 120px;
+  }
+  #image-preview, #image-preview1, #image-preview2, #image-preview3 {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+  }
+  #photoes-p{
+    margin-left: 145px;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    margin-left: 37%;
+  }
+
+  #photosturf,  #photosturf1,  #photosturf2,  #photosturf3{
+    margin: 0;
+    padding: 0;
+   
+  }
+
+  #photoesdivcollection{
+    display: flex;
+    flex-direction: row;
+  }
+  #rulesturf{
+    width: 450px;
+    height: 50px;
+    border-radius: 15px;
+    margin-left:110px;
+    padding: 10px;
+  }
+  #r-r{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+#informations{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 300px;
+}
+#informations>p{
+    font-style: italic;
+    font-size: 25px;
+}
+#informations>p>span{
+    font-size: 30px;
+}
+
+.return-home{
+  margin-top: 50px;
+  text-align: center;
+ }
+ #return-home-a{
+     text-decoration: none;
+     color: rgb(66, 15, 219);
+     font-size: 20px;
+ }
+ #return-home-a:hover{
+   text-decoration: underline;
+ }
+ .input-box1{
+  position: absolute;
+  left: 50px;
+ }
