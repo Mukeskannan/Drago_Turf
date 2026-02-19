@@ -1,0 +1,717 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#t-gallery{
+    width: 100vw;
+    height: 50px;
+    background-color: antiquewhite;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+.input-box input {
+    height: 45px;
+    width: 400px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  .input-box span.details {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+  .input-box input:focus {
+  border-color:#00d9aa;
+}
+.input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  #location-list {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    z-index: 3;
+  }
+  
+  #location-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #location-list li:hover {
+    background-color: #f2f2f2;
+  }
+
+
+
+/* styleing the inner html div */
+#gallery-container{
+  display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+ width: 99vw;
+ height:80vh ;
+  margin: 10px;
+  z-index: -2;
+  background-color: #00d9aa;
+  flex-direction: column;
+  overflow: scroll;
+}
+.t-g-main-block{
+  width: 300px;
+  height:300px;
+  margin: 10px;
+  background-color: gainsboro;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px gray;
+  position: relative;
+  transition:2s;
+  z-index: -1;
+  margin-bottom: 10px;
+
+}
+
+
+.right-arrow{
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-top: 4px solid black ;
+  border-right: 4px solid black ;
+  position: absolute;
+  bottom: 47%;
+  right: 15px;
+  transform: rotate(45deg);
+  transition:2s;
+  z-index: 1;
+}
+
+.img1{
+  width: 300px;
+  height: 300px;
+  z-index: -2;
+}
+
+
+/* for adjusting details on the block */
+.t-g-main-block1{
+  width: 300px;
+  height:300px;
+  margin: 10px;
+  background-color: gainsboro;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px gray;
+  position: relative;
+
+  margin-bottom: 10px;
+  
+  }
+.t-g-Nameturf{
+  position: absolute;
+  height: 30px;
+  background-color: rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 230px;
+  left: 70px;
+  z-index: 1;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.t-g-Locationturf{
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 25px;
+  left: 790px;
+  z-index: 1;
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-Contactturf{
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 25px;
+  left: 1200px;
+  z-index: 1;
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-typeturf{
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 110px;
+  left: 350px;
+  z-index: 1;
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-sizeturf{
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 110px;
+  left: 650px;
+  z-index: 1; 
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-soilturf{
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 110px;
+  left: 950px;
+  z-index: 1; 
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-usageturf{
+
+  position: absolute;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 110px;
+  left:1250px;
+  z-index: 1; 
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-MainAddress{
+  position: absolute;
+  width: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 180px;
+  left: 350px;
+  z-index: 1; 
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-rulesturf{
+  position: absolute;
+  width: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 180px;
+  left: 1000px;
+  z-index: 1; 
+  opacity: 1;
+  transition: 0.5s;
+}
+.t-g-turfamount{
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 520px;
+  right: 120px;
+  z-index: 1; 
+  font-style: italic;
+  font-size: 17px;
+  opacity: 1;
+  transition: 0.5s;
+}
+.placeorder{
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color:rgb(42, 40, 40);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 20px;
+  top: 600px;
+  right: 120px;
+  z-index: 1; 
+  font-style: italic;
+  font-size: 17px;
+  opacity: 1;
+  transition: 0.5s;
+  cursor: pointer;
+
+}
+.photosturf1{
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  z-index: -2;
+  }
+.t-g-photosturf2{
+width: 300px;
+height: 280px;
+position: absolute;
+bottom: 20px;
+left: 50px;
+opacity: 0;
+transition: 0.5s;
+border-radius: 20px;
+}
+.t-g-photosturf3{
+width: 300px;
+height: 280px;
+position:absolute;
+bottom: 20px;
+left: 400px;
+opacity: 0;
+transition: 0.5s;
+border-radius: 20px;
+}
+.t-g-photosturf4{
+width: 300px;
+height: 280px;
+position: absolute;
+bottom: 20px;
+left: 750px;
+opacity: 0;
+transition: 0.5s;
+border-radius: 20px;
+}
+/* order popup box */
+
+.book-block-main{
+  width: 98vw;
+  height: 98vh;
+  background-color: gray;
+ 
+  position: absolute;
+  margin-top: 5px;
+  top: 0;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px white;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+/* styling the  custome block */
+.book-block-main1{
+  width: 100%;
+  height: 45vh;
+  box-shadow: 4px 4px 10px white;
+  position: relative;
+  overflow: scroll;
+  scrollbar-width: none;
+  
+}
+.namelable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 7%;
+  left: 15%;
+}
+.locationlable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 7%;
+  left: 60%;
+}
+.customerName{
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  border: #00d9aa;
+  top: 17%;
+  left: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.customerName:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+}
+.customerLocation{
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  top: 17%;
+  left: 60%;
+}
+.customerLocation:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+}
+.emaillable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 36%;
+  left: 15%;
+}
+.customeremail{
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  top: 44%;
+  left: 15%;
+
+}
+.datelable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 36%;
+  left: 60%
+
+}
+
+.customerDate{
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  top: 44%;
+  left: 60%;
+}
+.customerDate:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+}
+.starttimelable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 61%;
+  left: 23%;
+
+}
+.starttimeinput{
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  top: 71%;
+  left: 20%;
+}
+.starttimeinput:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+}
+.endtimelable{
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 61%;
+  left: 68%; 
+}
+.endtimeinput{
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  top: 71%;
+  left: 65%;
+}
+.endtimeinput:focus{
+    border: 2.5px solid turquoise;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    outline: none;
+}
+
+.rewardlable{
+  width: 150px;
+  height: 50px;
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  top: 41%;
+  left: 78%; 
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customerrewardpoints{
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 43%;
+  left: 90%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rewardusepoints{
+  border-radius: 10%;
+  position: absolute;
+  top: 29%;
+  left: 83%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #06fdc8;
+  opacity: 0;
+}
+.saveuserdetails{
+  text-align: center;
+  position: absolute;
+  top: 80%;
+  left: 46%;
+  width: 100px;
+  height: 35px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(101, 246, 197);
+  color: white;
+  font-size: 18px;
+  font-style: italic;
+  padding: 5px;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.book-block-main2{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: scroll;
+  scrollbar-width: none;
+  opacity: 0;
+  
+}
+.turf-start{
+  margin-top: 10px;
+  text-align: center;
+}
+.turf-name{
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 17%;
+  left: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+.turf-location{
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 17%;
+  left: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+.turf-contact{
+  width: 170px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+
+.turf-amount{
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  left: 68%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+.total-time{
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  top: 43%;
+  left: 22%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+
+#search{
+  width:70px ;
+  height: 30px;
+  position: absolute;
+  top: 87px;
+  left: 420px;
+  background-color: white;
+  color: black;
+  user-select: none;
+  border-radius: 20px;
+  
+}
+#search:active{
+  border-color: #06fdc8;
+}
+
+.qrcode,.qrcode1{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 57%;
+  left: 15%;
+  margin-bottom: 50px;
+}
+.Transaction-Id{
+  position: absolute;
+  top: 73%;
+  right: 25%;
+  font-size: 19px;
+  font-style: italic;
+}
+.Transactionid{
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  top: 78%;
+  right: 15%;
+}
+.confirm-button{
+  width: 95px;
+  height: 35px;
+  border-radius: 20px;
+  top: 86%;
+  right: 25%;
+  position: absolute;
+  background-color: #00d9aa;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
