@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="Login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="black-color-div"></div>
+    <div id="page-container">
+        <div id="login-form-container">
+            <div id="logo-container">
+                <div id="sub-logo-container">
+                    <img src="Images\Login_Foot_Ball.png" alt="my company logo">
+                    <p>Welcome to  Drago Turf, your premier destination for booking turfs and making unforgettable memories. With wide range of turfs to choose from, you're sure to find the perfect spot for your Sports. Book Your turf today. <br>Let the game begin!</p>
+                </div>
+            </div>
+            <div id="form-con">
+                
+                <!-- <div id="form-sub-con"> -->
+                    <div id="login-form-con">
+                        <h1>Login</h1>
+                        <form action="login.php" method="post">
+
+                            <div class="user-details">
+                               <div id="form-group">
+                                <label for="username-box" >User Name</label>
+                                <input type="text" name="tusername" id="username-box" placeholder="Enter Your User Name" required>
+                               </div>
+                            </div>
+
+                            <div class="user-details">
+                               <div id="form-group">
+                                   <label for="password-box">Password</label>
+                                   <input type="password" name="tpassword" id="password-box" placeholder="Enter Your Password" required>
+                               </div>
+                            </div>
+                       
+                        <button id="login-btn">Log in</button>
+                        <div id="register-form">Don't have an account?<a href="Register.html" id="register-form-signup">Singup</a> </div>
+                    </div>
+                </form>
+               <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
