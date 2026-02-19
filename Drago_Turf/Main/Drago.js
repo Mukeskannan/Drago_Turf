@@ -226,14 +226,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
       
 
 
-
-
-      window.onload = function() {
-        var tname = document.getElementById('tt1').textContent;
-        var temail = document.getElementById('tt4').textContent;
-        
-        // Store in localStorage
-        localStorage.setItem("tname", tname);
-        localStorage.setItem("temail", temail);
-    };
-    
