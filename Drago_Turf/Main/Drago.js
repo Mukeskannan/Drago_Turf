@@ -95,7 +95,7 @@ nav4.addEventListener('mouseout',function(){
 
 
 //turf owner
-let turf_owner=document.getElementById("turf-owner");
+let turf_owner=document.getElementById("registration");
 let Register_Your_Turf =document.getElementById('nave-list1');
 let turf_owner_background=document.getElementById('turf-owner-background');
 
@@ -110,7 +110,7 @@ turf_owner.addEventListener('mouseover',()=>{
     turf_owner_background.classList.remove('background');
 })
 //cancle-booking
-
+let booking_status_main=document.getElementById('cancel-booking')
 let  Booking_Status=document.getElementById('nave-list3');
 let cancel_booking_background=document.getElementById('cancel-booking-background');
 
@@ -122,8 +122,12 @@ Booking_Status.addEventListener('click',function(){
     }, 1500);
 })
 
-//offered-turf
+booking_status_main.addEventListener('mouseover',()=>{
+    cancel_booking_background.classList.remove('background');
+})
 
+//offered-turf
+let offered_turf_main=document.getElementById("offered-turf")
 let offered_turf =document.getElementById('nave-list5');
 let offered_turf_background=document.getElementById('offered-turf-background');
 
@@ -135,9 +139,13 @@ offered_turf.addEventListener('click',function(){
     }, 1500);
 })
 
+offered_turf_main.addEventListener('mouseover',()=>{
+    offered_turf_background.classList.remove('background');
+})
+
 
 //reviews & Ratings
-
+let reviews_ratings_main=document.getElementById("review-rating")
 let reviews_ratings =document.getElementById('nave-list2');
 let review_rating_background=document.getElementById('review-rating-background');
 
@@ -149,9 +157,13 @@ reviews_ratings.addEventListener('click',function(){
     }, 1500);
 })
 
+reviews_ratings_main.addEventListener('mouseover',()=>{
+    review_rating_background.classList.remove('background');
+})
+
 
 //rewards
-
+let rewards_main=document.getElementById("rewards");
 let rewards =document.getElementById('nave-list4');
 let rewards_background=document.getElementById('rewards-background');
 
@@ -163,9 +175,13 @@ rewards.addEventListener('click',function(){
     }, 1500);
 })
 
+rewards_main.addEventListener('mouseover',()=>{
+    rewards_background.classList.remove('background');
+})
+
 
 //history
-
+let history_main=document.getElementById("history")
 let history =document.getElementById('nave-list6');
 let history_background=document.getElementById('history-background');
 
@@ -175,6 +191,10 @@ history .addEventListener('click',function(){
     setTimeout(() => {
         history_background.classList.remove('background');
     }, 1500);
+})
+
+history_main.addEventListener('mouseover',()=>{
+    history_background.classList.remove('background');
 })
 
 //turf collection paragraph

@@ -462,7 +462,7 @@ z-index: 1;
     position: absolute;
 }
 
-#turf-owner{
+#registration{
     width: 25vw;
     height:40vh;
     background-color: rgb(214, 212, 212);
@@ -475,8 +475,9 @@ z-index: 1;
     display: flex;
     align-items: center;   
     transition: .5s;
+   
 }
-#turf-owner:hover,#cancel-booking:hover,#offered-turf:hover,#review-rating:hover,#rewards:hover,#history:hover{
+#registration:hover,#cancel-booking:hover,#offered-turf:hover,#review-rating:hover,#rewards:hover,#history:hover{
     transform: translateY(-30px);
     transition: .5s;
     z-index: 1;
@@ -485,8 +486,15 @@ z-index: 1;
 #turf-owner-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
-    z-index: -1;
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);z-index: -1;
     padding: 10px;
     position: absolute;
     border-radius: 25px;
@@ -548,11 +556,20 @@ z-index: 1;
     display: flex;
     align-items: center;
     
+    
 }
 #cancel-booking-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);
     z-index: -1;
     padding: 10px;
     position: absolute;
@@ -576,7 +593,15 @@ z-index: 1;
 #offered-turf-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);
     z-index: -1;
     padding: 10px;
     position: absolute;
@@ -610,7 +635,15 @@ z-index: 1;
 #rewards-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);
     z-index: -1;
     padding: 10px;
     position: absolute;
@@ -633,7 +666,15 @@ z-index: 1;
 #review-rating-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);
     z-index: -1;
     padding: 10px;
     position: absolute;
@@ -657,7 +698,15 @@ z-index: 1;
 #history-background.background{
     width: 25vw;
     height: 40vh;
-    background:conic-gradient(from var(--angle),transparent 30%,black);
+    background: conic-gradient(
+  from var(--angle),
+  transparent 30%,
+ #ff006e,
+#8338ec,
+#3a86ff,
+#06ffa5,
+#ff006e
+);
     z-index: -1;
     padding: 10px;
     position: absolute;
