@@ -1,3 +1,4 @@
+const SERVER_URL = "http://localhost:8080";
 const locationInput = document.getElementById('tuserlocation');
 const locationList = document.getElementById('location-list');
 
@@ -64,16 +65,42 @@ locationInput.addEventListener('input', (e) => {
   }
 });
 
-let regester=document.getElementById('sumbit-1');
+let Register=document.getElementById('sumbit-1');
 
-regester.addEventListener('click',function(){
+Register.addEventListener('click',function(e){
+  e.preventDefault();
   let tusername=document.getElementById('tusername').value;
   let tuseremail =document.getElementById('tuseremail').value;
-  let tusernumber=document.getElementById('tusernumber').value;
+  let tusernumber=parseInt(document.getElementById('tusernumber').value);
   let tuserlocation =document.getElementById('tuserlocation').value;
   let tuserpassword =document.getElementById('tuserpassword').value;
-  let age=document.getElementById("age").value;
-  const selectedGender = document.querySelector('input[name="tusergender"]:checked');
+  let age=parseInt(document.getElementById("age").value);
 
-  console.log(tusername,tuseremail,tusernumber,tuserlocation,tuserpassword,age,selectedGender)
+  console.log(typeof(tusername),typeof(tusernumber),typeof(tuserpassword),typeof(tuseremail),typeof(tuserlocation),typeof(age))
+
+  fetch(`${SERVER_URL}/Drago/Auth/Signup`,{
+    method:"POST",
+    headers:{"Content-Type": "application/json"},
+   body: JSON.stringify({
+  userName: tusername,
+  mobileNumber: tusernumber,
+  password: tuserpassword,
+  email: tuseremail,
+  location: tuserlocation,
+  age: age
+})
+
+  })
+  .then(response=>{
+    if(response.ok){
+      alert("Register Successfully");
+      window.location.href="Login.html";
+    }
+    else{
+       return response.json().then(data=>{throw new Error(data.message || "Registration failed")})
+    }
+  })
+  .catch(error=>{
+    alert(error.message)
+  })
 })

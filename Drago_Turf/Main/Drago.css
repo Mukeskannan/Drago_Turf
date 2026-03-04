@@ -343,15 +343,10 @@ z-index: 1;
     width: 500px;
     height: 150px;
     position: absolute;
-    transition: .5s;
     margin-top: 10px;
-    opacity: .8;
+    opacity: 1;
     right: 240px;
     border-radius: 20px;
-}
-#t-c-bannar:hover{
-    opacity: 1;
-    transition: .5s;
 }
 #t-collection-text{
     font-size: 30px;
