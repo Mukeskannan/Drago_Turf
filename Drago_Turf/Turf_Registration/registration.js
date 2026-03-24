@@ -1,4 +1,5 @@
-
+const SERVER_URL = "http://localhost:8080";
+const token = localStorage.getItem("token");
 let mainbtn=document.getElementById('mainbtn');
 let infoboxbtn=document.getElementById('infoboxbtn');
 let infoboxbtn1=document.getElementById('infoboxbtn1');
@@ -261,70 +262,50 @@ else{
 //final adding
 
 function addEvent(){
-  const channel=new BroadcastChannel('turf_channel');
-  const Nameturf=document.getElementById("Nameturf").value;
-  const Locationturf=document.getElementById("Locationturf").value;
-  const MainAddress=document.getElementById("MainAddress").value;
-  const Contactturf=document.getElementById("Contactturf").value;
-  const typeturf=document.getElementById("typeturf").value;
-  const sizeturf=document.getElementById("sizeturf").value;
-  const soilturf=document.getElementById("soilturf").value;
-  const usageturf=document.getElementById("usageturf").value;
-  const turfamount=document.getElementById("turfamount").value
-  const rulesturf=document.getElementById("rulesturf").value;
-  const photoe1 = document.getElementById('photosturf').files[0];
-  const photoe2 = document.getElementById('photosturf1').files[0];
-  const photoe3 = document.getElementById('photosturf2').files[0];
-  const photoe4 = document.getElementById('photosturf3').files[0];
+  const name=document.getElementById("Nameturf").value;
+  const location=document.getElementById("Locationturf").value;
+  const address=document.getElementById("MainAddress").value;
+  const contact=document.getElementById("Contactturf").value;
+  const turf_Type=document.getElementById("typeturf").value;
+  const turf_Size=document.getElementById("sizeturf").value;
+  const soil_Type=document.getElementById("soilturf").value;
+  const turf_Usage=document.getElementById("usageturf").value;
+  const turf_Amount=document.getElementById("turfamount").value
+  const rules_Regulations=document.getElementById("rulesturf").value;
+  const Image1path = document.getElementById('photosturf').files[0];
+  const Image2path = document.getElementById('photosturf1').files[0];
+  const Image3path = document.getElementById('photosturf2').files[0];
+  const Image4path = document.getElementById('photosturf3').files[0];
+  const is_active="YES";
 
-
-  if (!photoe1 || !photoe2 || !photoe3 || !photoe4) {
+  if (!Image1path || !Image2path || !Image3path || !Image4path) {
     alert('Please upload all the required images.');
     return;
   }
+let formData = new FormData();
+formData.append("Name", name);
+formData.append("Location", location);
+formData.append("Address", address);
+formData.append("Contact", contact);
+formData.append("Turf_Size", turf_Size);
+formData.append("Turf_Type", turf_Type);
+formData.append("Soil_Type", soil_Type);
+formData.append("Turf_Usage", turf_Usage);
+formData.append("Turf_Amount", turf_Amount);
+formData.append("Is_active",is_active);
+formData.append("Rules_Regulations", rules_Regulations);
+formData.append("Image1path", Image1path);
+formData.append("Image2path", Image2path);
+formData.append("Image3path", Image3path);
+formData.append("Image4path", Image4path);
 
-
-
-    const reader1 =new FileReader();
-    const reader2 =new FileReader();
-    const reader3 =new FileReader();
-    const reader4 =new FileReader();
-
-    reader1.onload=function(e1){
-      reader2.onload=function(e2){
-        reader3.onload=function(e3){
-          reader4.onload=function(e4){
- 
-
-
-
-  
-  
-  channel.postMessage({
-    Nameturf,
-    Locationturf,
-    MainAddress,
-    Contactturf,
-    typeturf,
-    sizeturf,
-    soilturf,
-    usageturf,
-    turfamount,
-    ImageData1:e1.target.result,
-    ImageData2:e2.target.result,
-    ImageData3:e3.target.result,
-    ImageData4:e4.target.result,
-    rulesturf});
-  };
-  reader4.readAsDataURL(photoe4);
-};
-reader3.readAsDataURL(photoe3);
-};
-reader2.readAsDataURL(photoe2);
-};
-reader1.readAsDataURL(photoe1);
-
-
+fetch(`${SERVER_URL}/turf_upload`,{
+  method:"POST",
+  body:formData
+})
+.then(res=>res.text())
+.then(data=>alert(data))
+.catch(err=>console.log(err));
 
 
 };

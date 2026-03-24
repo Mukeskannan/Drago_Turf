@@ -20,24 +20,21 @@
         if (!response.ok) {
             throw new Error("Login Failed");
         }
-        return response.json();  // 🔥 convert response to JSON
+        return response.json();  //  convert response to JSON
     })
     .then(data => {
         alert("Login Successfully");
 
-        // ✅ Now token available
+        // Now token available
         localStorage.setItem("token", data.Token);
+        console.log(data.Token)
         console.log("Token stored successfully");
-        reload()
         // Redirect if needed
-       // window.location.href="../Main/Drago.html";
+       setTimeout(function(){
+         window.location.href="../Main/Drago.html";
+       },100)
     })
     .catch(error => {
         alert(error.message);
     });
     })
-    //reload function
-
-    function reload(){
-    console.log(localStorage.getItem("token"))
-    }

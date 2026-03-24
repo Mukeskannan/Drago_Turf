@@ -10,7 +10,7 @@
     
     <div id="home-property">
         <div id="home">
-            <img src="photos/armark.png" alt="" id="home1">
+            <img src="Images/ArMark.png" alt="" id="home1">
             <div id="t-o-details">
                 <h1>Your Registered Turf</h1>
                 <div class="turf"></div>
@@ -29,7 +29,7 @@
         
     
         <div id="infobox">
-            <form name="turfregister" action="turfregister.php" method="POST" enctype="multipart/form-data">
+            <form name="turfregister" enctype="multipart/form-data">
 
                 <div class="input-box">
                     <label for="Nameturf"class="boxinfohead"> Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -54,7 +54,7 @@
     
                 <div class="input-box">
                    <label for="Contactturf"class="boxinfohead"> Contact:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <input type="number" name="turfContact" id="Contactturf" class="boxinfo" placeholder="Enter Your Contact Numbers"required><br>
+                   <input type="text" name="turfContact" id="Contactturf" class="boxinfo" placeholder="Enter Your Contact Numbers"required><br>
                 </div>
     
                 <div class="input-box">
@@ -84,13 +84,13 @@
 
                 <div class="input-box">
                     <label for="turfamount"class="boxinfohead"> Turf Amount:</label>&nbsp;&nbsp;
-                    <input type="number" name="turfamount" id="turfamount" class="boxinfo" placeholder="Enter Your Turf Amount Per Hour:" required><br>
+                    <input type="text" name="turfamount" id="turfamount" class="boxinfo" placeholder="Enter Your Turf Amount Per Hour:" required><br>
                 </div>
                 
                 <div class="input-box">
                     <label for="turfphoto"class="boxinfohead">Turf Home Photo:</label>&nbsp;&nbsp;&nbsp;
                     <div class="photoesdiv">
-                        <img src="photos/addhere.jpg" alt="Upload Image" id="image-preview">
+                        <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview">
                         <input type="file" name="turfPhotos" id="photosturf" accept="images/*" required >
                     </div>
                     <p id="photoes-p">ADD 👆 HERE</p>
@@ -99,34 +99,31 @@
                 <h2 style="text-align: center;">ADD Your Turf Photos</h2>
                 <div id="photoesdivcollection">
                 <div class="photoesdiv">
-                    <img src="photos/download.png.jpg" alt="Upload Image" id="image-preview1">
+                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview1">
                     <input type="file" name="turfPhoto1" id="photosturf1" accept="images/*" required >
                 </div>
 
                 <div class="photoesdiv">
-                    <img src="photos/download.png.jpg" alt="Upload Image" id="image-preview2">
+                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview2">
                     <input type="file" name="turfPhoto2" id="photosturf2" accept="images/*" required >
                 </div>
 
                 <div class="photoesdiv">
-                    <img src="photos/download.png.jpg" alt="Upload Image" id="image-preview3">
+                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview3">
                     <input type="file" name="turfPhoto3" id="photosturf3" accept="images/*" required >
                 </div>
             </div>
             <hr>
                 <div class="input-box">
                     <p id="r-r">Rules & Regulations:<p> <br>
-                    <textarea  id="rulesturf" name="turfrules" placeholder="Enter What Rules & Regulations are must Followed by the players" required></textarea>
+                    <textarea  id="rulesturf" name="turfrules"  placeholder="Enter What Rules & Regulations are must Followed by the players" value="Updated Soon..." required></textarea>
                 </div>
                 <center>
                     <div class="buttons">
                         
-                        <div id="infoboxbtn1">GO BACK</div><button id="infoboxbtn" type="submit" onclick="addEvent()"  >CONFIRM</button>
+                        <div id="infoboxbtn1">GO BACK</div><button id="infoboxbtn" type="button" onclick="addEvent()"  >CONFIRM</button>
                     </div>
                 </center>
-                <div class="input-box" style="display: none;">
-                    <input type="text" name="adminuse" id="adminuse" class="boxinfo1" value="leodas"><br>
-                </div>
                 
             </form>
         </div>
@@ -150,7 +147,7 @@
         <p class="seven"><span>7.</span>Click the emojis image and add Your Turf images which you want.</p>
         <p class="eight"><span>8.</span>Enter What Rules & Regulations are must Followed by the players.</p>
     </div>
-    <div class="return-home"><a href="toku.php" id="return-home-a">|Return To Home|</a></div>
+    <div class="return-home"><a href="../Main/Drago.html" id="return-home-a">|Return To Home|</a></div>
     </div>
 </body>
 </html>

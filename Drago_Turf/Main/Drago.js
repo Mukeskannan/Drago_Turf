@@ -1,3 +1,20 @@
+  const SERVER_URL = "http://localhost:8080";
+window.onload=()=>{
+   
+     setTimeout(function() {
+          window.scrollTo(0, 0);
+        }, 100);
+    
+    fetch(`${SERVER_URL}/Drago/Auth/api/check`,{
+        method:"GET",
+         headers: {
+    "Authorization": "Bearer " + localStorage.getItem("token")
+  }
+    })
+}
+
+      
+
 
 // three line properties
 let home=document.getElementById("home");
@@ -238,11 +255,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
     })
 
-    window.onload = function() {
-        setTimeout(function() {
-          window.scrollTo(0, 0);
-        }, 100);
-      };
-      
 
 

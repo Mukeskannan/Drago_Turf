@@ -1,17 +1,3 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-  var username = localStorage.getItem("tname");
-  var useremail = localStorage.getItem("temail");
-
-  if (username && useremail) {
-      console.log("Username:", username);
-      console.log("User Email:", useremail);
-
-     
-  } else {
-      console.log("No data found in localStorage.");
-  }
-});
 const locationInput = document.getElementById('Locationturf');
 const locationList = document.getElementById('location-list');
 
@@ -93,61 +79,81 @@ locationInput.addEventListener('input', (e) => {
 
 //final adding
 
+  const SERVER_URL = "http://localhost:8080";
+window.onload=()=>{
+  const maindiv=document.getElementById("gallery-container");
+  fetch(`${SERVER_URL}/add_turf`,{
+    method:"GET",
+    headers:{
+      "Authorization":"Bearer "+localStorage.getItem("token")
+    }
+  })
 
+  .then(response=>{
+      if (!response.ok) {
+        throw new Error("Some thing wrong please try later")
+      }
+      return response.json();
+    })
+    .then(data=>{
+           for (i = 0; i < data.content.length; i++) {
+            const resp = data.content[i];
+            if(resp.is_active="YES"){
+        
+        const newDiv = document.createElement('div');
+        newDiv.className = 't-g-main-block';
 
-const channel1 = new BroadcastChannel('admintoturfgallery');
+        const newDiv1 = document.createElement('div');
+        newDiv1.className = 't-g-main-block1';
 
-// Load data from localStorage when the page loads
-window.onload = () => {
-  const storedData = localStorage.getItem('galleryData');
-  if (storedData) {
-    const galleryContainer = document.getElementById('gallery-container');
-    galleryContainer.innerHTML = storedData;
+        newDiv1.innerHTML =
+          ` <img src=${resp.Image1path} class='photosturf1'><div class='right-arrow' onclick='increaseblock(event)'></div> <div class='t-g-Nameturf'><span class='span'>Name :&nbsp; </span> ${resp.name} </div> <br> <div class='t-g-Locationturf'>${resp.location}</div> <br> <div class='t-g-MainAddress'>Address : &nbsp; <br>" ${resp.address}"</div> <br> <div class='t-g-Contactturf'><span class='span'>Contact : &nbsp; </span>" ${resp.contact}"</div> <br> <div class='t-g-typeturf'>Turf Type : &nbsp; " ${resp.turf_Type}"</div> <br> <div class='t-g-sizeturf'>Turf Size : &nbsp; " ${resp.turf_Size}"</div> <br> <div class='t-g-soilturf'>Soil Type" ${resp.soil_Type}"</div> <br> <div class='t-g-usageturf'>Turf Usage : &nbsp; " ${resp.turf_Usage}"</div> <br> <div class='t-g-turfamount'><span class='span'>Amount P/H : </span>${resp.turf_Amount}</div><br> <img src=${resp.Image2path} class='t-g-photosturf2'> <br> <img src=${resp.Image3path} class='t-g-photosturf3'><br> <img src=${resp.Image4path} class='t-g-photosturf4'><br> <br> <div class='t-g-rulesturf'>Rules & Regulations : &nbsp;  <br> " ${resp.rules_Regulations} "</div><br><div class='placeorder' onclick='Book_now(event)'>Book Now</div>`;
+       
+        newDiv.appendChild(newDiv1);
+        
+        maindiv.appendChild(newDiv);
+
+      }
+    }})
   }
-};
-
-// Listen for messages from the admin page
-channel1.onmessage = (event) => {
-  const galleryContainer = document.getElementById('gallery-container');
-  galleryContainer.innerHTML += event.data; // Append new data to the gallery
-
-  // Save updated content to localStorage
-  localStorage.setItem('galleryData', galleryContainer.innerHTML);
-};
 
 
 // increasing block size
 
-let t_g_main_block= document.querySelectorAll('.t-g-main-block');
-let cc=0;
-function increaseblock(event){
+let cc = 0;
+function increaseblock(event) {
   cc++;
-  if(cc%2==1){
-   
-    event.target.parentElement.style.width='1485px';
-    event.target.parentElement.style.height='750px';
-    event.target.parentElement.style.position='absolute';
-    event.target.parentElement.style.top='0';
-    event.target.parentElement.style.left='0';
-    event.target.parentElement.style.zIndex='4';
-    event.target.style.transform='rotate(-135deg)';
-    event.target.parentElement.children[22].style.opacity='1';
-    event.target.parentElement.children[24].style.opacity='1';
-    event.target.parentElement.children[20].style.opacity='1';
+  if (cc % 2 == 1) {
+    console.log("turfname");
+    event.target.parentElement.parentElement.style.width = '1485px';
+    event.target.parentElement.parentElement.style.height = '750px';
+    event.target.parentElement.parentElement.style.position = 'absolute';
+    event.target.parentElement.parentElement.style.top = '0';
+    event.target.parentElement.parentElement.style.left = '0';
+    event.target.parentElement.parentElement.style.zIndex = '11';
+    event.target.style.transform = 'rotate(-135deg)';
+    event.target.parentElement.parentElement.children[1].style.opacity = '0';
 
-
+    var turfname=document.getElementsByClassName("t-g-Nameturf")[0]
+    console.log(turfname);
+    
   }
- else{
-  event.target.parentElement.style.width='300px';
-  event.target.parentElement.style.height='300px';
-  event.target.parentElement.style.position='relative';
-  event.target.style.transform='rotate(45deg)';
-  event.target.parentElement.children[22].style.opacity='0';
-    event.target.parentElement.children[24].style.opacity='0';
-    event.target.parentElement.children[20].style.opacity='0';
-  
-}}
+  else {
 
+    event.target.parentElement.parentElement.style.width = '300px';
+    event.target.parentElement.parentElement.style.height = '300px';
+    event.target.parentElement.parentElement.style.position = 'relative';
+    event.target.style.transform = 'rotate(45deg)';
+
+    let opcity = event.target.parentElement.parentElement.children[1];
+    if (opcity) {
+      setTimeout(() => {
+        opcity.style.opacity = '1';
+      }, 2000);
+    }
+  }
+
+}
 
 
 
