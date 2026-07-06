@@ -127,7 +127,6 @@ nav4.addEventListener('mouseout',function(){
 });
 
 
-//boxes background animation
 
 
 //turf owner
@@ -162,58 +161,6 @@ booking_status_main.addEventListener('mouseover',()=>{
     cancel_booking_background.classList.remove('background');
 })
 
-//offered-turf
-let offered_turf_main=document.getElementById("offered-turf")
-let offered_turf =document.getElementById('nave-list5');
-let offered_turf_background=document.getElementById('offered-turf-background');
-
-offered_turf.addEventListener('click',function(){
-    offered_turf_background.classList.add('background');
-
-    setTimeout(() => {
-        offered_turf_background.classList.remove('background');
-    }, 1500);
-})
-
-offered_turf_main.addEventListener('mouseover',()=>{
-    offered_turf_background.classList.remove('background');
-})
-
-
-//reviews & Ratings
-let reviews_ratings_main=document.getElementById("review-rating")
-let reviews_ratings =document.getElementById('nave-list2');
-let review_rating_background=document.getElementById('review-rating-background');
-
-reviews_ratings.addEventListener('click',function(){
-    review_rating_background.classList.add('background');
-
-    setTimeout(() => {
-        review_rating_background.classList.remove('background');
-    }, 1500);
-})
-
-reviews_ratings_main.addEventListener('mouseover',()=>{
-    review_rating_background.classList.remove('background');
-})
-
-
-//rewards
-let rewards_main=document.getElementById("rewards");
-let rewards =document.getElementById('nave-list4');
-let rewards_background=document.getElementById('rewards-background');
-
-rewards.addEventListener('click',function(){
-    rewards_background.classList.add('background');
-
-    setTimeout(() => {
-        rewards_background.classList.remove('background');
-    }, 1500);
-})
-
-rewards_main.addEventListener('mouseover',()=>{
-    rewards_background.classList.remove('background');
-})
 
 
 //history

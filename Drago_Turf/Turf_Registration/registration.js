@@ -240,20 +240,7 @@ checkForm();
 
 
 
-let home1=document.getElementById("home1");
-let t_o_details=document.getElementById("t-o-details");
-let t_o_clickcount=0;
-home1.addEventListener('click',()=>{
-  t_o_clickcount++;
-  if(t_o_clickcount%2==1){
-  t_o_details.classList.add("come-right");
-  home1.classList.add("house1");
-  }
-else{
-  t_o_details.classList.remove("come-right");
-  home1.classList.remove("house1");
-}
-})
+
 
 
 

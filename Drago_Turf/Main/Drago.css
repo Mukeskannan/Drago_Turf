@@ -7,8 +7,7 @@
 body{
     overflow-x: hidden;
     background-color: beige;
-/*  background: linear-gradient(rgb(63, 204, 63),#5193bf, #017c61);
- */}
+}
  #myButton{
     opacity: 1;
     position: absolute;
@@ -24,7 +23,6 @@ body{
     flex-direction: row;
     position: sticky;
     top: 0;
-    /* background-image: url(photos/image5.jpeg); */
     background-color:#3a3c34;
     z-index: 1;
    
@@ -33,7 +31,6 @@ body{
     height: 70px;
     display: flex;
     flex-direction: row;
-    /* background-image: url(photos/image5.jpeg); */
     background-color: #34393c; 
     overflow: hidden;
     z-index:2;
@@ -73,6 +70,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+    margin-top: 20px;
 }
 
 #nave-list1,#nave-list2,#nave-list3,#nave-list4,#nave-list5,#nave-list6{
@@ -90,7 +88,6 @@ body{
     position: absolute;
     right: 10px;
     top: 10px;
-    
     z-index: 1;
     
 }
@@ -472,7 +469,7 @@ z-index: 1;
     transition: .5s;
    
 }
-#registration:hover,#cancel-booking:hover,#offered-turf:hover,#review-rating:hover,#rewards:hover,#history:hover{
+#registration:hover,#cancel-booking:hover,#history:hover{
     transform: translateY(-30px);
     transition: .5s;
     z-index: 1;
@@ -571,111 +568,9 @@ z-index: 1;
     border-radius: 25px;
     animation: 1.5s spin linear 1; 
 }
-#offered-turf{
-    width: 25vw;
-    height:40vh;
-    background-color: rgb(214, 212, 212);;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    box-shadow: 5px 5px 10px gray;
-    border-radius: 25px;
-    justify-content: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 
-#offered-turf-background.background{
-    width: 25vw;
-    height: 40vh;
-    background: conic-gradient(
-  from var(--angle),
-  transparent 30%,
- #ff006e,
-#8338ec,
-#3a86ff,
-#06ffa5,
-#ff006e
-);
-    z-index: -1;
-    padding: 10px;
-    position: absolute;
-    border-radius: 25px;
-    animation: 1.5s spin linear 1; 
-}
- #col3{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap:5vw;
-    margin-top: 20px;
-    /* box-shadow: 5px 5px 15px gray; */
-  
-}
 
-#rewards{
-    width: 25vw;
-    height:40vh;
-    background-color: rgb(214, 212, 212);
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 10px gray;
-    justify-content: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-}  
-#rewards-background.background{
-    width: 25vw;
-    height: 40vh;
-    background: conic-gradient(
-  from var(--angle),
-  transparent 30%,
- #ff006e,
-#8338ec,
-#3a86ff,
-#06ffa5,
-#ff006e
-);
-    z-index: -1;
-    padding: 10px;
-    position: absolute;
-    border-radius: 25px;
-    animation: 1.5s spin linear 1; 
-}
-#review-rating{
-    width: 25vw;
-    height:40vh;
-    background-color: rgb(214, 212, 212);
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 10px gray;
-    justify-content: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-#review-rating-background.background{
-    width: 25vw;
-    height: 40vh;
-    background: conic-gradient(
-  from var(--angle),
-  transparent 30%,
- #ff006e,
-#8338ec,
-#3a86ff,
-#06ffa5,
-#ff006e
-);
-    z-index: -1;
-    padding: 10px;
-    position: absolute;
-    border-radius: 25px;
-    animation: 1.5s spin linear 1; 
-}
+
 #history{
     width: 25vw;
     height:40vh;
