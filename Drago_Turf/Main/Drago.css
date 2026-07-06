@@ -265,7 +265,7 @@ z-index: 1;
     transition: 1s;
 }
 #intro-sp1{
-    margin-top: 600px;
+    margin-top: 0px;
 }
 #intro-sp1.loaded1{
     margin-top: 0px;
@@ -275,7 +275,7 @@ z-index: 1;
    
 }
 #intro-sp2{
-    margin-top: 600px;
+    margin-top: 0px;
 }
 #intro-sp2.loaded2{
     margin-top: 0px;
@@ -285,7 +285,7 @@ z-index: 1;
    
 }
 #intro-sp3{
-    margin-top: 600px;
+    margin-top: 0px;
 }
 #intro-sp3.loaded3{
     margin-top: 0px;

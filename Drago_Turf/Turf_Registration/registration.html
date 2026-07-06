@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turf Owners Page</title>
     <link rel="stylesheet" href="registration.css">
 </head>
+
 <body>
-    
+
     <div id="home-property">
         <div id="home">
             <img src="Images/ArMark.png" alt="" id="home1">
@@ -16,115 +18,131 @@
                 <div class="turf"></div>
             </div>
         </div>
-        
+
         <h2 id="mainh2">Here You Able to Insert Your Turf Informations In Our Website</h2>
     </div>
     <div id="t-o-details"></div>
     <h3 id="maininfo">Click Here to Enter Your Details...</h3>
 
     <center><button id="mainbtn">ADD</button></center>
-    
+
     <!-- Information Box -->
-     <div class="infoboxmain">
-        
-    
+    <div class="infoboxmain">
+
+
         <div id="infobox">
             <form name="turfregister" enctype="multipart/form-data">
 
                 <div class="input-box">
-                    <label for="Nameturf"class="boxinfohead"> Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="turfName" id="Nameturf" class="boxinfo" placeholder="Enter Your Turf Name"required><br>
+                    <label for="Nameturf" class="boxinfohead">
+                        Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfName" id="Nameturf" class="boxinfo" placeholder="Enter Your Turf Name"
+                        required><br>
                 </div>
                 <div class="input-box">
-                    <label for="Locationturf"class="boxinfohead">Location:</label>&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="turfLocation" id="Locationturf" class="boxinfo" placeholder="Enter Your Turf Location"required>
-                <br>
+                    <label for="Locationturf" class="boxinfohead">Location:</label>&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfLocation" id="Locationturf" class="boxinfo"
+                        placeholder="Enter Your Turf Location" required>
+                    <br>
                     <ul id="location-list"></ul>
                 </div>
-                
+
                 <div class="input-box">
-                    <label for="MainAddress"class="boxinfohead"> Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="textarea" name="turfAddress" id="MainAddress" class="boxinfo"
-                    placeholder="Street Name,
+                    <label for="MainAddress" class="boxinfohead"> Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="textarea" name="turfAddress" id="MainAddress" class="boxinfo" placeholder="Street Name,
                     Located-Area,
                     City, State
-                    Pin Code"
-                    required><br>
+                    Pin Code" required><br>
                 </div>
-    
+
                 <div class="input-box">
-                   <label for="Contactturf"class="boxinfohead"> Contact:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <input type="text" name="turfContact" id="Contactturf" class="boxinfo" placeholder="Enter Your Contact Numbers"required><br>
+                    <label for="Contactturf" class="boxinfohead"> Contact:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfContact" id="Contactturf" class="boxinfo"
+                        placeholder="Enter Your Contact Numbers" required><br>
                 </div>
-    
+
                 <div class="input-box">
-                    <label for="typeturf"class="boxinfohead"> Turf Type:</label>&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="turfType" id="typeturf" class="boxinfo" placeholder="Turf Type,  eg., 'Kentucky Bluegrass, Bermuda Grass, Zoysia Grass'"required><br>
+                    <label for="typeturf" class="boxinfohead"> Turf Type:</label>&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfType" id="typeturf" class="boxinfo"
+                        placeholder="Turf Type,  eg., 'Kentucky Bluegrass, Bermuda Grass, Zoysia Grass'" required><br>
                 </div>
-                
+
                 <div class="input-box">
-                    <label for="sizeturf"class="boxinfohead"> Turf Size:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <select  name="turfSize" id="sizeturf" class="boxinfo" required>
+                    <label for="sizeturf" class="boxinfohead"> Turf Size:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select name="turfSize" id="sizeturf" class="boxinfo" required>
                         <option value="">Enter Your Turf Size</option>
                         <option value="Small">Small</option>
                         <option value="Medium">Medium</option>
                         <option value="Large">Large</option>
                     </select>
                 </div>
-    
+
                 <div class="input-box">
-                    <label for="soilturf"class="boxinfohead"> Soil Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="turfSoilType" id="soilturf" class="boxinfo" placeholder="Soil Type,  eg., 'Clay, Sand, Loam'" value="Updated Soon..."><br>
-                </div>
-    
-                <div class="input-box">
-                    <label for="usageturf"class="boxinfohead"> Turf Usage:</label>&nbsp;&nbsp;
-                    <input type="text" name="turfUsage" id="usageturf" class="boxinfo" placeholder="Turf Usage,  eg., 'Residential, Commercial, Sports Field'" required><br>
+                    <label for="soilturf" class="boxinfohead"> Soil Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfSoilType" id="soilturf" class="boxinfo"
+                        placeholder="Soil Type,  eg., 'Clay, Sand, Loam'" value="Updated Soon..."><br>
                 </div>
 
                 <div class="input-box">
-                    <label for="turfamount"class="boxinfohead"> Turf Amount:</label>&nbsp;&nbsp;
-                    <input type="text" name="turfamount" id="turfamount" class="boxinfo" placeholder="Enter Your Turf Amount Per Hour:" required><br>
+                    <label for="usageturf" class="boxinfohead"> Turf Usage:</label>&nbsp;&nbsp;
+                    <input type="text" name="turfUsage" id="usageturf" class="boxinfo"
+                        placeholder="Turf Usage,  eg., 'Residential, Commercial, Sports Field'" required><br>
+                </div>
+                <div class="input-box">
+                    <label for="upiid" class="boxinfohead">UPI ID:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="turfUpiId" id="upiid" class="boxinfo"
+                        placeholder="Enter Your UPI ID (e.g. mukesnan8040@oksbi)" required>
                 </div>
                 
+
                 <div class="input-box">
-                    <label for="turfphoto"class="boxinfohead">Turf Home Photo:</label>&nbsp;&nbsp;&nbsp;
+                    <label for="turfamount" class="boxinfohead"> Turf Amount:</label>&nbsp;&nbsp;
+                    <input type="text" name="turfamount" id="turfamount" class="boxinfo"
+                        placeholder="Enter Your Turf Amount Per Hour:" required><br>
+                </div>
+
+                <div class="input-box">
+                    <label for="turfphoto" class="boxinfohead">Turf Home Photo:</label>&nbsp;&nbsp;&nbsp;
                     <div class="photoesdiv">
                         <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview">
-                        <input type="file" name="turfPhotos" id="photosturf" accept="images/*" required >
+                        <input type="file" name="turfPhotos" id="photosturf" accept="images/*" required>
                     </div>
                     <p id="photoes-p">ADD 👆 HERE</p>
                 </div>
                 <hr>
                 <h2 style="text-align: center;">ADD Your Turf Photos</h2>
                 <div id="photoesdivcollection">
-                <div class="photoesdiv">
-                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview1">
-                    <input type="file" name="turfPhoto1" id="photosturf1" accept="images/*" required >
-                </div>
+                    <div class="photoesdiv">
+                        <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview1">
+                        <input type="file" name="turfPhoto1" id="photosturf1" accept="images/*" required>
+                    </div>
 
-                <div class="photoesdiv">
-                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview2">
-                    <input type="file" name="turfPhoto2" id="photosturf2" accept="images/*" required >
-                </div>
+                    <div class="photoesdiv">
+                        <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview2">
+                        <input type="file" name="turfPhoto2" id="photosturf2" accept="images/*" required>
+                    </div>
 
-                <div class="photoesdiv">
-                    <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview3">
-                    <input type="file" name="turfPhoto3" id="photosturf3" accept="images/*" required >
+                    <div class="photoesdiv">
+                        <img src="Images/Addhere1.jpg" alt="Upload Image" id="image-preview3">
+                        <input type="file" name="turfPhoto3" id="photosturf3" accept="images/*" required>
+                    </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
                 <div class="input-box">
-                    <p id="r-r">Rules & Regulations:<p> <br>
-                    <textarea  id="rulesturf" name="turfrules"  placeholder="Enter What Rules & Regulations are must Followed by the players" value="Updated Soon..." required></textarea>
+                    <p id="r-r">Rules & Regulations:
+                    <p> <br>
+                        <textarea id="rulesturf" name="turfrules"
+                            placeholder="Enter What Rules & Regulations are must Followed by the players"
+                            value="Updated Soon..." required></textarea>
                 </div>
                 <center>
                     <div class="buttons">
-                        
-                        <div id="infoboxbtn1">GO BACK</div><button id="infoboxbtn" type="button" onclick="addEvent()"  >CONFIRM</button>
+
+                        <div id="infoboxbtn1">GO BACK</div><button id="infoboxbtn" type="button"
+                            onclick="addEvent()">CONFIRM</button>
                     </div>
                 </center>
-                
+
             </form>
         </div>
         <div id="color-grad"></div>
@@ -135,14 +153,23 @@
     <div id="informations">
         <p class="one"><span>1.</span>Click the ADD button on the top of the page,New Pop Up box will appear</p>
         <p class="two"><span>2.</span>Enter Your Turf Name Without Mistake.</p>
-        <p class="three"><span>3.</span>Click Your Location If Your Location is not in the drop down list select which location near Your Turf.</p>
-        <p class="four"><span>4.</span>Enter Your Address Correctly like <br>"street Name, Located-Area, City,State, Pin Code"</p>
+        <p class="three"><span>3.</span>Click Your Location If Your Location is not in the drop down list select which
+            location near Your Turf.</p>
+        <p class="four"><span>4.</span>Enter Your Address Correctly like <br>"street Name, Located-Area, City,State, Pin
+            Code"</p>
         <p class="five"><span>5.</span>Enter Your Contact Mobile Numbers "9876543210,8967452310"</p>
         <p class="six"><span>6.</span>Others
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Type like,'Kentucky Bluegrass, Bermuda Grass, Zoysia Grass',
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Size the drop down list will available  if you want you enter the accurate Size &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;please enter in the "Rules & Regulations" Text Area,
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Soil Type like,'Clay, Sand, Loam',
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Usage like,'Residential, Commercial, Sports Field'
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Type like,'Kentucky
+            Bluegrass, Bermuda Grass, Zoysia Grass',
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Size the drop down list
+            will available if you want you enter the accurate Size
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;please enter in the "Rules & Regulations" Text
+            Area,
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Soil Type like,'Clay,
+            Sand, Loam',
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=>Enter Your Turf Usage like,'Residential,
+            Commercial, Sports Field'
         </p>
         <p class="seven"><span>7.</span>Click the emojis image and add Your Turf images which you want.</p>
         <p class="eight"><span>8.</span>Enter What Rules & Regulations are must Followed by the players.</p>
@@ -150,7 +177,7 @@
     <div class="return-home"><a href="../Main/Drago.html" id="return-home-a">|Return To Home|</a></div>
     </div>
 </body>
+
 </html>
 <script src="registration.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>

@@ -1,5 +1,5 @@
 const SERVER_URL = "http://localhost:8080";
-const token = localStorage.getItem("token");
+
 let mainbtn=document.getElementById('mainbtn');
 let infoboxbtn=document.getElementById('infoboxbtn');
 let infoboxbtn1=document.getElementById('infoboxbtn1');
@@ -257,8 +257,6 @@ else{
 
 
 
-
-
 //final adding
 
 function addEvent(){
@@ -271,12 +269,13 @@ function addEvent(){
   const soil_Type=document.getElementById("soilturf").value;
   const turf_Usage=document.getElementById("usageturf").value;
   const turf_Amount=document.getElementById("turfamount").value
+  const upiId=document.getElementById("upiid").value;
   const rules_Regulations=document.getElementById("rulesturf").value;
   const Image1path = document.getElementById('photosturf').files[0];
   const Image2path = document.getElementById('photosturf1').files[0];
   const Image3path = document.getElementById('photosturf2').files[0];
   const Image4path = document.getElementById('photosturf3').files[0];
-  const is_active="YES";
+  const is_active="ACTIVE";
 
   if (!Image1path || !Image2path || !Image3path || !Image4path) {
     alert('Please upload all the required images.');
@@ -292,6 +291,7 @@ formData.append("Turf_Type", turf_Type);
 formData.append("Soil_Type", soil_Type);
 formData.append("Turf_Usage", turf_Usage);
 formData.append("Turf_Amount", turf_Amount);
+formData.append("Upi_Id",upiId);
 formData.append("Is_active",is_active);
 formData.append("Rules_Regulations", rules_Regulations);
 formData.append("Image1path", Image1path);
@@ -301,6 +301,9 @@ formData.append("Image4path", Image4path);
 
 fetch(`${SERVER_URL}/turf_upload`,{
   method:"POST",
+  headers: {
+    "Authorization": "Bearer " + localStorage.getItem("token")
+  },
   body:formData
 })
 .then(res=>res.text())

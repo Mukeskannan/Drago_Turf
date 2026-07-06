@@ -61,6 +61,13 @@ window.onload = () => {
     .then(data => {
       for (i = 0; i < data.content.length; i++) {
         const resp = data.content[i];
+        
+            BASE_URL = "http://localhost:8080";
+            console.log(BASE_URL);
+            console.log(BASE_URL+resp.Image4path);
+        if(resp.is_active=="ACTIVE"){
+        
+
         const newDiv = document.createElement('div');
         newDiv.className = 't-g-main-block';
 
@@ -68,7 +75,7 @@ window.onload = () => {
         newDiv1.className = 't-g-main-block1';
 
         newDiv1.innerHTML =
-          ` <img src=${resp.Image1path} class='photosturf1'><div class='right-arrow' onclick='increaseblock(event)'></div> <div class='t-g-Nameturf'><span class='span'>Name :&nbsp; </span> ${resp.name} </div> <br> <div class='t-g-Locationturf'>${resp.location}</div> <br> <div class='t-g-MainAddress'>Address : &nbsp; <br>" ${resp.address}"</div> <br> <div class='t-g-Contactturf'><span class='span'>Contact : &nbsp; </span>" ${resp.contact}"</div> <br> <div class='t-g-typeturf'>Turf Type : &nbsp; " ${resp.turf_Type}"</div> <br> <div class='t-g-sizeturf'>Turf Size : &nbsp; " ${resp.turf_Size}"</div> <br> <div class='t-g-soilturf'>Soil Type" ${resp.soil_Type}"</div> <br> <div class='t-g-usageturf'>Turf Usage : &nbsp; " ${resp.turf_Usage}"</div> <br> <div class='t-g-turfamount'><span class='span'>Amount P/H : </span>${resp.turf_Amount}</div><br> <img src=${resp.Image2path} class='t-g-photosturf2'> <br> <img src=${resp.Image3path} class='t-g-photosturf3'><br> <img src=${resp.Image4path} class='t-g-photosturf4'><br> <br> <div class='t-g-rulesturf'>Rules & Regulations : &nbsp;  <br> " ${resp.rules_Regulations} "</div><br><div class='placeorder' onclick='Book_now(event)'>Book Now</div>`;
+          ` <img src=${BASE_URL+resp.Image1path} class='photosturf1'><div class='right-arrow' onclick='increaseblock(event)'></div> <div class='t-g-Nameturf'><span class='span'>Name :&nbsp; </span> ${resp.name} </div> <br> <div class='t-g-turf_id'> ${resp.id} </div> <br><div class='t-g-Locationturf'>${resp.location}</div> <br> <div class='t-g-MainAddress'>Address : &nbsp; <br>" ${resp.address}"</div> <br> <div class='t-g-Contactturf'><span class='span'>Contact : &nbsp; </span>" ${resp.contact}"</div> <br> <div class='t-g-typeturf'>Turf Type : &nbsp; " ${resp.turf_Type}"</div> <br> <div class='t-g-sizeturf'>Turf Size : &nbsp; " ${resp.turf_Size}"</div> <br> <div class='t-g-soilturf'>Soil Type" ${resp.soil_Type}"</div> <br> <div class='t-g-usageturf'>Turf Usage : &nbsp; " ${resp.turf_Usage}"</div> <br> <div class='t-g-turfamount'><span class='span'>Amount P/H : </span>${resp.turf_Amount}</div><br> <img src=${BASE_URL+resp.Image2path} class='t-g-photosturf2'> <br> <img src=${BASE_URL+resp.Image3path} class='t-g-photosturf3'><br> <img src=${BASE_URL+resp.Image4path} class='t-g-photosturf4'><br> <br> <div class='t-g-rulesturf'>Rules & Regulations : &nbsp;  <br> " ${resp.rules_Regulations} "</div><br><div class='placeorder' onclick='Book_now(event)'>Book Now</div>`;
         const newDiv2 = document.createElement('div');
         newDiv2.className = 't-g-main-block2';
         newDiv2.innerHTML = " <div class='add' onclick='insert(event)'>ADD NOW</div><div class='remove' onclick='remove(event)'>Delete</div>  "
@@ -77,7 +84,7 @@ window.onload = () => {
         newDiv.appendChild(newDiv2);
         maindiv.appendChild(newDiv);
 
-      }
+      }}
 
     })
 };
@@ -124,17 +131,41 @@ function increaseblock(event) {
 
 function remove(event) {
   event.target.parentElement.parentElement.remove();
-}
+  const id=event.target.parentElement.parentElement.children[0].children[4].textContent;
+  
+
+  fetch(`${SERVER_URL}/delete_selected_turf${id}`,{
+    method:"PUT",
+    headers:{
+      "Authorization":"Bearer "+localStorage.getItem("token")
+    }
+  })
+  .then(response=>response.text())
+  .then(data=>{
+    alert(data)
+  })
+  .catch(err=>console.log(err))
+
+ }
 
 // add to the turf gallery
 
 function insert(event) {
-  let insertdiv = event.target.parentElement.previousElementSibling;
-  console.log(insertdiv);
+    
+  
+  const id=event.target.parentElement.parentElement.children[0].children[4].textContent;
 
-  fetch(`${SERVER_URL}/add_selected_turf`, {
-    method:"POST",
-    body:formData
+  fetch(`${SERVER_URL}/add_selected_turf${id}`, {
+    method:"PUt",
+    headers:{
+      "Authorization":"Bearer "+localStorage.getItem("token")
+    }
+    
   })
+  .then(response=>response.text())
+  .then(data=>{
+    alert(data)
+  })
+  .catch(error=>error.text);
 
 }

@@ -774,3 +774,30 @@
   justify-content: center;
   font-style: italic;
 }
+
+.slot-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slot-box {
+  padding: 10px;
+  border: 2px solid green;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #eaffea;
+}
+
+.slot-box.booked {
+  background: red;
+  color: white;
+  cursor: not-allowed;
+  border: 2px solid darkred;
+}
+
+.slot-box.selected {
+  background: limegreen;
+  color: white;
+}

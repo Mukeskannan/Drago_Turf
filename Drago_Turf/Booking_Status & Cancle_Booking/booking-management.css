@@ -1,115 +1,87 @@
 *{
-    user-select: none;
-}
-#head{
-    font-size: 18px;
-    text-align: center;
-     background-color: rgb(233, 205, 169);
-     color: black;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     margin: 20px 20px 5px 5px;
-     
-}
-#cancle-btn{
-    width: 120px;
-    height: 40px;
-    border-radius: 20px;
-    font-size: 16px;
-    font-style: italic;
-    background-color: aquamarine;
-    color: black;
-    margin-top: 10px;
-    margin-left: 45vw;
-
-}
-.confirm{
-    margin-top: 50px;
-    width: 120px;
-    height: 40px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-style: italic;
-    background-color: aquamarine;
-    color: black;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   position: absolute;
-   top: 850px;
-   right: 400px;
-   
-   justify-content: center;
-
-}
-.goback{
-    margin-top: 50px;
-width: 120px;
-    height: 40px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-style: italic;
-    background-color: aquamarine;
-    color: black;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   position: absolute;
-   top: 850px;
-   right: 600px;
-   justify-content: center;
-}
-#maininstruction{
-    margin-top: 50px;
-    margin-left: 10px;
-    font-style: italic;
-}
-#informations{
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-left: 300px;
-}
-#informations>p{
-    font-style: italic;
-    font-size: 25px;
-}
-#informations>p>span{
-    font-size: 30px;
-}
-#ones{
-font-style: italic; 
-font-size: 25px;
-}
-#one{
-    font-style: bold; 
-font-size: 23px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
 }
 
-.ppup {
-    width:50vw ;
-    height: 70vh;
-    background-color: gray;
-    position: absolute;
-    opacity: 0;
-    transition: .5s;
-    margin-top: 4%;
-    margin-left: 13%;
-    border-radius: 20px;
-    padding: 10px;
-    overflow: auto;
-    scrollbar-width: none;
-    padding-left: 20vw;
-    padding-bottom: 50px;
-    padding-top: 75px;
+body{
 
-       
-    }
-    
-    #customer_name,#customer_location,#customer_email,#customer_date,#turf_name,#turf_location,#turf_ttid,#digitalpin{
-        width: 300px;
-        height: 55px;
-        border-radius: 20px;
-        margin-left: 50px;
-        margin-top: 20px;
-    } 
+    background:#eef2f5;
+}
+
+h1{
+
+    text-align:center;
+    margin:30px;
+    color:#0a5c36;
+
+}
+
+#bookingContainer{
+
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 12px rgba(0,0,0,.2);
+    padding:20px;
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card h2{
+
+    color:#0a5c36;
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    margin:10px 0;
+    font-size:16px;
+
+}
+
+button{
+
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:red;
+    color:white;
+    cursor:pointer;
+    font-size:17px;
+
+}
+
+button:hover{
+
+    background:#c40000;
+
+}
+
+.empty{
+
+    text-align:center;
+    font-size:25px;
+    margin-top:80px;
+
+}

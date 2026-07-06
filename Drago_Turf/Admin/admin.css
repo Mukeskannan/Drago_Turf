@@ -274,6 +274,9 @@ z-index: 1;
 opacity: 1;
 transition: 0.5s;
 }
+.t-g-turf_id{
+    opacity: 0;
+}
 .t-g-turfamount{
 position: absolute;
 width: 200px;

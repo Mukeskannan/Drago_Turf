@@ -11,6 +11,25 @@ window.onload=()=>{
     "Authorization": "Bearer " + localStorage.getItem("token")
   }
     })
+
+    const token = localStorage.getItem("token");
+
+fetch("http://localhost:8080/Drago/Auth/api/me", {
+    method: "GET",
+    headers: {
+        "Authorization": "Bearer " + token
+    }
+})
+.then(res => res.json())
+.then(data => {
+    document.getElementById("tt1").innerText = data.userName;
+            localStorage.setItem("userName", data.userName);
+
+    document.getElementById("tt2").innerText = data.location;
+    document.getElementById("tt3").innerText = data.mobileNumber;
+    document.getElementById("tt4").innerText = data.email;
+    document.getElementById("tt5").innerText = data.age;
+});
 }
 
       

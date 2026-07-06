@@ -75,12 +75,13 @@ locationInput.addEventListener('input', (e) => {
       }
       });
 
-
+ 
 
 //final adding
 
   const SERVER_URL = "http://localhost:8080";
 window.onload=()=>{
+  console.log("hi");
   const maindiv=document.getElementById("gallery-container");
   fetch(`${SERVER_URL}/add_turf`,{
     method:"GET",
@@ -98,16 +99,26 @@ window.onload=()=>{
     .then(data=>{
            for (i = 0; i < data.content.length; i++) {
             const resp = data.content[i];
-            if(resp.is_active="YES"){
+            console.log(resp);
+              console.log("hi");
+        
+            BASE_URL="http://localhost:8080"
+            console.log(BASE_URL);
+            
+            
+            if(resp.is_active=="YES"){
         
         const newDiv = document.createElement('div');
         newDiv.className = 't-g-main-block';
 
         const newDiv1 = document.createElement('div');
         newDiv1.className = 't-g-main-block1';
-
+        console.log("hi");
+        
+        console.log(BASE_URL+resp.Image1path);
+        
         newDiv1.innerHTML =
-          ` <img src=${resp.Image1path} class='photosturf1'><div class='right-arrow' onclick='increaseblock(event)'></div> <div class='t-g-Nameturf'><span class='span'>Name :&nbsp; </span> ${resp.name} </div> <br> <div class='t-g-Locationturf'>${resp.location}</div> <br> <div class='t-g-MainAddress'>Address : &nbsp; <br>" ${resp.address}"</div> <br> <div class='t-g-Contactturf'><span class='span'>Contact : &nbsp; </span>" ${resp.contact}"</div> <br> <div class='t-g-typeturf'>Turf Type : &nbsp; " ${resp.turf_Type}"</div> <br> <div class='t-g-sizeturf'>Turf Size : &nbsp; " ${resp.turf_Size}"</div> <br> <div class='t-g-soilturf'>Soil Type" ${resp.soil_Type}"</div> <br> <div class='t-g-usageturf'>Turf Usage : &nbsp; " ${resp.turf_Usage}"</div> <br> <div class='t-g-turfamount'><span class='span'>Amount P/H : </span>${resp.turf_Amount}</div><br> <img src=${resp.Image2path} class='t-g-photosturf2'> <br> <img src=${resp.Image3path} class='t-g-photosturf3'><br> <img src=${resp.Image4path} class='t-g-photosturf4'><br> <br> <div class='t-g-rulesturf'>Rules & Regulations : &nbsp;  <br> " ${resp.rules_Regulations} "</div><br><div class='placeorder' onclick='Book_now(event)'>Book Now</div>`;
+          ` <img src=${BASE_URL+resp.Image1path} class='photosturf1'><div class='right-arrow' onclick='increaseblock(event)'></div> <div class='t-g-Nameturf'><span class='span'>Name :&nbsp; </span> ${resp.name} </div> <br> <div class='t-g-Locationturf'>${resp.location}</div> <br> <div class='t-g-MainAddress'>Address : &nbsp; <br>" ${resp.address}"</div> <br> <div class='t-g-Contactturf'><span class='span'>Contact : &nbsp; </span>" ${resp.contact}"</div> <br> <div class='t-g-typeturf'>Turf Type : &nbsp; " ${resp.turf_Type}"</div> <br> <div class='t-g-sizeturf'>Turf Size : &nbsp; " ${resp.turf_Size}"</div> <br> <div class='t-g-soilturf'>Soil Type" ${resp.soil_Type}"</div> <br> <div class='t-g-usageturf'>Turf Usage : &nbsp; " ${resp.turf_Usage}"</div> <br> <div class='t-g-turfamount'><span class='span'>Amount P/H : </span>${resp.turf_Amount}</div><br> <img src=${BASE_URL+resp.Image2path} class='t-g-photosturf2'> <br> <img src=${BASE_URL+resp.Image3path} class='t-g-photosturf3'><br> <img src=${BASE_URL+resp.Image4path} class='t-g-photosturf4'><br> <br> <div class='t-g-rulesturf'>Rules & Regulations : &nbsp;  <br> " ${resp.rules_Regulations} "</div><br><div class='placeorder' onclick='Book_now(event)'>Book Now</div>`;
        
         newDiv.appendChild(newDiv1);
         
@@ -124,7 +135,6 @@ let cc = 0;
 function increaseblock(event) {
   cc++;
   if (cc % 2 == 1) {
-    console.log("turfname");
     event.target.parentElement.parentElement.style.width = '1485px';
     event.target.parentElement.parentElement.style.height = '750px';
     event.target.parentElement.parentElement.style.position = 'absolute';
@@ -132,10 +142,13 @@ function increaseblock(event) {
     event.target.parentElement.parentElement.style.left = '0';
     event.target.parentElement.parentElement.style.zIndex = '11';
     event.target.style.transform = 'rotate(-135deg)';
-    event.target.parentElement.parentElement.children[1].style.opacity = '0';
 
-    var turfname=document.getElementsByClassName("t-g-Nameturf")[0]
-    console.log(turfname);
+    event.target.parentElement.children[20].style.opacity='1'
+    event.target.parentElement.children[22].style.opacity='1'
+    event.target.parentElement.children[24].style.opacity='1'
+   
+    var turfName=event.target.parentElement.children[2];
+    turfName.classList.add("opened")
     
   }
   else {
@@ -160,17 +173,7 @@ function increaseblock(event) {
 
 function Book_now(event) {
   
-    var username = localStorage.getItem("tname");
-    var useremail = localStorage.getItem("temail");
   
-    if (username && useremail) {
-        console.log("Username:", username);
-        console.log("User Email:", useremail);
-  
-       
-    } else {
-        console.log("No data found in localStorage.");
-    }
  
 
     const galleryContainer = document.getElementById('gallery-container');
@@ -190,10 +193,12 @@ function Book_now(event) {
     nameLabel.htmlFor = "customerName";
     book_block1.appendChild(nameLabel);
 
-    const inputElement = document.createElement('div');
+    const inputElement = document.createElement('input');
     inputElement.name="customerusername"
     inputElement.className = 'customerName';
-    inputElement.textContent=username;
+    inputElement.value= localStorage.getItem("userName");
+    inputElement.setAttribute('type', 'text');
+    inputElement.setAttribute('placeholder', 'Enter your Name here');
     book_block1.appendChild(inputElement);
   
   //creating location input
@@ -293,30 +298,6 @@ let rewardlabel = document.createElement("label");
     rewardElement.textContent="";
     book_block1.appendChild(rewardElement);
     
-    // Get username from localStorage
-var username = localStorage.getItem("tname");
-
-if (username) {
-    fetch("http://localhost/My%20Project/Turf/get_reward_points.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ customerusername: username })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            rewardElement.textContent = data.point; // Update reward points
-        } else {
-            rewardElement.textContent = "0"; // If no points found, set to 0
-        }
-    })
-    .catch(error => console.error("Error fetching reward points:", error));
-} else {
-    rewardElement.textContent = "0";
-}
-
 
    
     
@@ -403,8 +384,9 @@ book_block2.appendChild(turfstart)
 
 let turfname=document.createElement('div');
 turfname.className='turf-name';
-const tname=event.target.parentElement.children[2].textContent;
-turfname.textContent=tname;
+const tname = event.target.parentElement.querySelector('.t-g-Nameturf').textContent
+    .replace("Name :", "")
+    .trim();turfname.textContent=tname;
 book_block2.appendChild(turfname);
 
 let turflocation=document.createElement('div');
@@ -444,23 +426,29 @@ let selectedamount2=selectamount1.split(':');
 let amount1=selectedamount2[1].trim().replace('"','');
 console.log(amount1)
 
- 
-  final_amount=final_result*amount1;
-  console.log(final_amount);
-  
- var  qrcode=document.createElement('div')
-  qrcode.className='qrcode';
-  
-  document.querySelectorAll('.qrcode').forEach(qr => qr.innerHTML = "");
+final_amount = final_result * amount1;
+console.log(final_amount);
 
-    // Google Pay UPI URL (Replace with your UPI ID)
-    var upiURL = `upi://pay?pa=mukeskannan804-2@oksbi&pn=TurfPayment&mc=&tid=&tr=&tn=Payment&am=${final_amount}&cu=INR`;
-     console.log("Amount Function UPI URL: ", upiURL);
+var qrcode = document.createElement('div');
+qrcode.className = 'qrcode';
 
-    // Generate QR Code
-    new QRCode(qrcode, upiURL);
+// clear old QR codes
+document.querySelectorAll('.qrcode').forEach(qr => qr.innerHTML = "");
 
-  book_block2.appendChild(qrcode)
+// UPI URL
+var upiURL = `upi://pay?pa=mukeskannan804-2@oksbi&pn=TurfPayment&am=${final_amount}&cu=INR`;
+console.log("UPI URL:", upiURL);
+
+
+QRCode.toCanvas(upiURL, function (err, canvas) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  qrcode.appendChild(canvas);
+});
+
+book_block2.appendChild(qrcode);
 
   let transactionidLabel = document.createElement("label");
   transactionidLabel.className='Transaction-Id';
@@ -477,13 +465,13 @@ console.log(amount1)
   confirm_button.className="confirm-button";
   confirm_button.textContent="CONFIRM"
   confirm_button.onclick=function (event){
-    sendemail(event);}
+    storeDb(event);}
   book_block2.appendChild(confirm_button);
-  function sendemail(event) {
+  function storeDb(event) {
    
   
     // Customer details
-    var customer_name = event.target.parentElement.parentElement.children[0].children[1].textContent;
+    var customer_name = event.target.parentElement.parentElement.children[0].children[1].value;
     var customer_location = event.target.parentElement.parentElement.children[0].children[3].value;
     var customer_email = event.target.parentElement.parentElement.children[0].children[9].value;
     var customer_date = event.target.parentElement.parentElement.children[0].children[5].value;
@@ -505,76 +493,47 @@ console.log(amount1)
   console.log(unique_pin);
   var digitalpin=unique_pin
 
-    
-  
-    var templateParams = {
-          customer_email: customer_email,
-          to_name:customer_name,
-          customer_name:customer_name,
-          customer_location:customer_location,
-          customer_email:customer_email,
-          customer_date:customer_date,
-          customer_start_time:customer_start_time,
-          customer_end_time:customer_end_time,
-          turf_name:turf_name,
-          turf_location:turf_location,
-          turf_contact:turf_contact,
-          turf_totaltime:turf_totaltime,
-          turf_ttid:turf_ttid,
-          digitalpin:digitalpin
-        };
 
-  
-        emailjs.send('service_aw68exn', 'template_lt7ncep', templateParams)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-       window.alert("Sent successfully!");
-       console.log("log")
-       
-    })
-    var bookingData = {
-      customer_name: customer_name,
-      customer_location: customer_location,
-      customer_email: customer_email,
-      customer_date: customer_date,
-      customer_start_time: customer_start_time,
-      customer_end_time: customer_end_time,
-      turf_name: turf_name,
-      turf_location: turf_location,
-      turf_contact: turf_contact,
-      turf_totaltime: turf_totaltime,
-      turf_ttid: turf_ttid,
-      digitalpin:digitalpin
-  };
-  // Send data to PHP
+let amountPerHour = Number(turfamount.textContent.split(':')[1].trim());
 
-  fetch("http://localhost/My%20Project/Turf/store_booking.php", {
+let startHour = Number(customer_start_time.split(':')[0]);
+let endHour = Number(customer_end_time.split(':')[0]);
+
+let hours = Math.abs(endHour - startHour);
+let final_amount = amountPerHour * hours;
+console.log("DATE:", customer_date);
+if (!customer_date) {
+    alert("Please select date");
+    return;
+}
+console.log("CUstomer name is",customer_name);
+
+  fetch("http://localhost:8080/booking", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(bookingData)
+   body: JSON.stringify({
+    turfName: turf_name,
+    customerName: customer_name,
+    customerEmail: customer_email,
+    customerLocation: customer_location,
+    bookingDate: customer_date,
+    bookingTime: `${customer_start_time}-${customer_end_time}`,
+    amount: final_amount,
+    transactionId: turf_ttid,
+    status: "BOOKED"
 })
-.then(response => response.text())  // Get raw text response
-.then(text => {
-    console.log("Raw Response:", text); // Debug response
-    try {
-        const data = JSON.parse(text); // Parse JSON
-        if (data.message) {
-            alert("Booking Confirmed!");
-        } else {
-            alert("Error: " + data.error);
-        }
-    } catch (e) {
-        console.error("Invalid JSON response", text);
-    }
 })
-.catch(error => console.error("Fetch Error:", error));
+.then(res => res.json())
+.then(data => {
+    console.log("Saved to DB:", data);
+    alert("Booking saved successfully!");
+})
+.catch(err => {
+    console.error("Error saving booking:", err);
+});
   }
-
-    
-    
-  
 
   confirm_button.addEventListener('click',()=>{
     book_block.style.opacity='0';
@@ -589,7 +548,7 @@ console.log('mm');
 confirm_button.addEventListener("click", function () {
   console.log('mm');
   
-    let username= document.querySelector('.customerName').textContent;
+    let username= document.querySelector('.customerName').value;
 
     if (username.trim() === "") {
         alert("Please enter your profile name.");
@@ -598,17 +557,7 @@ confirm_button.addEventListener("click", function () {
 
     let formData = new FormData();
     formData.append("customerusername", username);
-    alert (username)
 
-    fetch("update_points.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data); // Show response message
-    })
-    .catch(error => console.error("Error:", error));
 });
 
 
@@ -648,26 +597,6 @@ function use(event,final_result){
       console.log("Username not found on the page!");
       return;
   }
-
-  // Send AJAX request to check & update reward points
-  fetch("update_point.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: username })
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.success) {
-          console.log("Points updated successfully! Remaining Points:", data.remainingPoints);
-          alert(`Points deducted successfully! Your remaining points: ${data.remainingPoints}`);
-      } else {
-          console.log("Error:", data.message);
-          alert(data.message);
-      }
-  })
-  .catch(error => console.error("Error:", error));
-
-
       
     }
 

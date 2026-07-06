@@ -1,10 +1,43 @@
-#head{
-    font-size: 18px;
-    text-align: center;
-     background-color: rgb(233, 205, 169);
-     color: black;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     margin: 20px 20px 5px 5px;
-     
+body{
+    margin:0;
+    background:#f4f4f4;
+    font-family:Arial;
+}
+
+h1{
+    text-align:center;
+    margin:20px;
+}
+
+#historyContainer{
+    width:90%;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.card h2{
+    color:green;
+    margin-top:0;
+}
+
+.row{
+    margin:8px 0;
+}
+
+.status{
+    color:green;
+    font-weight:bold;
+}
+
+.noData{
+    text-align:center;
+    font-size:25px;
+    margin-top:100px;
 }
